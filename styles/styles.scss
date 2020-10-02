@@ -1,0 +1,235 @@
+@import "./constants";
+@import url("https://use.fontawesome.com/releases/v5.13.0/css/all.css");
+
+* {
+  margin: 0px;
+  padding: 0px
+}
+
+body {
+  color: $offwhite;
+  font-family: Montserrat, Verdana, Arial;
+  background-color: $offwhite;
+  font-size: 2em;
+  height: 100vh;
+}
+
+/* ============== HEADER & NAV BAR ================*/
+
+.header {
+  background-color: $maincolor;
+  padding: $mainpad;
+  display: flex;
+  justify-content: space-between;
+
+  &__logo {
+    border: white 2px solid;
+    padding: 5px;
+    font-size: 4vw;
+    transform: skewX(-20deg);
+  }
+}
+
+.menu {
+  font-size: 5.5vw;
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    font-family: Montserrat;
+  }
+
+  &__item {
+    text-decoration: none;
+    color: $offwhite;
+    margin-right: 10px;
+
+    &--active {
+      border-bottom: $offwhite solid 2px;
+    }
+  }
+
+  &__item:hover {
+    font-weight: bold;
+  }
+}
+
+
+
+/* ============ SIDEBAR SOCIALS ======================*/
+.socials {
+  position: fixed;
+  right: -310px; 
+  bottom: 30px; 
+  
+/* Individual social bars*/
+  &__blog {
+    background-color: #e17b77;
+  }
+
+  &__facebook {
+    background-color: #3b5998;
+  }
+
+  &__twitter {
+    background-color: #00aced;
+  }
+
+  &__github {
+    background-color: #333;
+  }
+
+  &__linkedin {
+    background-color: #007bb6;
+  }
+
+  /* ALL social bars*/
+  a {
+    display: flex;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    width: 350px;
+    transition: .5s transform ease-in-out;
+    
+    &:hover {
+      transform: translateX(-255px);
+      transition: .5s transform ease-in-out;
+    }
+
+    /*TEXT*/
+    span {
+      font-size: 20px;
+      display: block;
+      text-decoration: underline;
+    }
+
+  }
+}
+ 
+.icon::before {
+  /*Common Properties: All required to make icons render reliably */
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+   /*Added */
+  font-weight: 600;
+  font-size: 30px;
+  font-family: "Font Awesome 5 Brands";
+  /* border: black solid 1px; */
+  text-align: center;
+  width: 40px;
+  margin-right: 10px;
+}
+ /* Individual icons*/
+.laptop::before {
+  content: "\f5fc";
+  font-family: "Font Awesome 5 Free";
+}
+.twitter::before {
+  content: "\f099";
+}
+.linkedin::before {
+  content: "\f0e1";
+}
+.facebook::before {
+  content: "\f39e";
+}
+.github::before {
+  content: "\f09b";
+}
+
+/* ============ TESTIMONIAL ======================*/
+
+.index {
+  @include flexcenter;
+  padding: $mainpad;
+}
+
+.testimonial {
+  position: relative;
+  height: 600px;
+  width: 500px;
+  @include boxshadow;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  border-radius: 40px;
+  overflow: hidden;
+
+  &__about {
+    font-family: montserrat;
+    color: $offblack;
+    text-align: left;
+    padding: 40px;
+    font-size: 0.7em;
+    font-weight: bold;
+    line-height: 40px;
+  }
+
+  &__image {
+    @include imageholder;
+    position: absolute;
+    top: 53%;
+    left: 35%;
+    z-index: 1;
+  }
+
+  &__profile {
+    z-index: 0;
+    position: absolute;
+    bottom: 0px;
+    background-color: $maincolor;
+    height: 200px;
+    width: 100%;
+  }
+
+  &__name {
+    margin-top: 17%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  &__link {
+    display: block;
+    color: #999999;
+    font-weight: bold;
+    font-size: 25px;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+
+
+/* ============= PORTFOLIO============= */
+
+@import "./portfolio";
+
+/* ============= MEDIA HEADER FIX TABLET ============= */
+@media (min-width: 768px) {
+  .header__logo {
+    font-size: 1em;
+  }
+
+  .menu {
+    font-size: 1em;
+  }
+}
+
+/* ============= MEDIA HEADER FIX DESKTOP  ============= */
+@media (min-width: 1024px) {
+  .header__logo {
+    font-size: 1em;
+  }
+
+  .menu {
+    font-size: 1em;
+  }
+}

@@ -1,0 +1,31 @@
+$maincolor: #686de0;
+$gray: #c3cfe2;
+$offwhite: #fff;
+$offblack: rgb(99, 96, 96);
+$mainpad: 20px;
+
+@mixin flexcenter{
+    display:flex;
+    justify-content: center;
+  }
+
+@mixin imageholder{
+    border-radius: 50%;
+    border: white 5px solid;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;}
+
+@mixin boxshadow{
+    -webkit-box-shadow: 5px 5px 15px 3px #000000; 
+    box-shadow: 5px 5px 15px 3px #000000;
+}
+
+@mixin bluebtn{  
+ color: white;
+  font-size: 20px;
+  background: #686de0;
+  padding: 10px 20px;
+  border: #636060 2px solid;
+  border-radius: 25px;
+}

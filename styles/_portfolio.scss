@@ -1,0 +1,81 @@
+.portfolio {
+  padding: 20px;
+  background-color: #c3cfe2;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-auto-rows: 400px;
+  grid-auto-flow: dense;
+  grid-gap: $mainpad;
+}
+
+.gallery__item {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  background-color: $offblack;
+
+  &:hover>.gallery__image {
+    transform: scale(1.1);
+    opacity: 0.15;
+    transition: .5s ease-in-out;
+  }
+
+  &:hover>.gallery__btn {
+    opacity: 1;
+    transition: .7s ease-in-out;
+  }
+}
+
+.gallery__image {
+  width: 100%;
+  height: 100%;
+  transition: .5s ease-in-out;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 100% 80%;
+  }
+}
+
+.gallery__btn {
+  opacity: 0;
+  position: absolute;
+  top: 45%;
+  left: 35%;
+  transition: .3s ease-in-out;
+
+  a {text-decoration: none;}
+}
+
+.gallery__text {
+  @include bluebtn;
+  text-decoration: none;
+  -webkit-box-shadow: 6px 7px 7px #0e0d0d;
+  box-shadow: 6px 7px 7px #0e0d0d;
+
+  &:hover {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    ;
+  }
+}
+
+
+
+/* =============TABLET============== */
+@media (min-width: 768px) {
+  .portfolio {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+/* =============DESKTOP============== */
+@media (min-width: 1024px) {
+  .portfolio {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}
